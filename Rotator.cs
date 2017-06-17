@@ -44,10 +44,10 @@ public class Rotator : MonoBehaviour {
 		this.transform.LookAt (currentTarget);
 
 
-		if (Input.GetKey (KeyCode.Q)) {
+		if (Input.GetKey (KeyCode.E)) {
 			standardDistance -= 0.1f;
 		}
-		if (Input.GetKey (KeyCode.E)) {
+		if (Input.GetKey (KeyCode.Q)) {
 			standardDistance += 0.1f;
 		}
 

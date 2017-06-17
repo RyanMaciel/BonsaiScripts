@@ -207,10 +207,10 @@ public class FractalBranch:MonoBehaviour
 			Leaf newLeaf = new GameObject ("Leaf").AddComponent<Leaf> ().Initialize (this.manager.leafMaterial, 0.1f, 0.25f, this.manager.leafMesh);
 			newLeaf.transform.parent = this.transform;
 			newLeaf.transform.localPosition = Vector3.up * this.length;
-			newLeaf.transform.rotation = Quaternion.Euler (140 - Random.Range(0, 100),Random.Range(0, 360),0);
+			newLeaf.transform.rotation = Quaternion.Euler (125 - Random.Range(0, 70),Random.Range(0, 360),0);
 
 
-			if (Random.Range (0, 15) == 0) {
+			if (Random.Range (0, 10) == 0) {
 				GameObject flower = new GameObject ("Flower");
 				flower.AddComponent<MeshFilter> ().mesh = this.manager.flowerMesh;
 				flower.AddComponent<MeshRenderer> ().material = this.manager.flowerMaterial;
@@ -246,6 +246,9 @@ public class FractalBranch:MonoBehaviour
 		childBranches.Add (childBranch);
 	}
 
+	public void OnMouseDown(){
+		this.removeFromParent ();
+	}
 	//used for pruning.
 	public void removeFromParent ()
 	{
@@ -302,7 +305,7 @@ public class TreeManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (timeUntilGrowth <= 0f) {
+		/*if (timeUntilGrowth <= 0f) {
 			timeUntilGrowth = 70f;
 			if (treeAge < 5) {
 				baseBranch.growChildren ();
@@ -315,7 +318,7 @@ public class TreeManager : MonoBehaviour
 			}
 		} else {
 			timeUntilGrowth -= 1f;
-		}
+		}*/
 		if (Input.GetKeyUp (KeyCode.P)) {
 			baseBranch.growChildren ();
 		}
