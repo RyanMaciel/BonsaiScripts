@@ -257,48 +257,6 @@ public class FractalBranch
 		}
 		return new MeshTuple (branches, transformLeafs);
 	}
-	/*public Mesh getLeafMesh () {
-		Mesh transferMesh = new Mesh ();
-		Mesh returnMesh = new Mesh ();
-		if (this.childBranches != null && this.childBranches.Count != 0) {
-			CombineInstance[] combine = new CombineInstance[this.childBranches.Count];
-			for (int i = 0; i < childBranches.Count; i++) {
-				FractalBranch childBranch = childBranches [i];
-				combine [i].mesh = childBranch.getLeafMesh();
-				Quaternion rotationQ = Quaternion.Euler (leaf.rotation.x, leaf.rotation.y, leaf.rotation.z);
-				combine [i].transform = Matrix4x4.TRS (leaf.translation, rotationQ, Vector3.one);
-			}
-			transferMesh.CombineMeshes (combine, true, true);
-			CombineInstance[] finalCombine = new CombineInstance[2];
-			Quaternion zeroRotation = Quaternion.Euler (0, 0, 0);
-			finalCombine [0].mesh = transferMesh;
-			finalCombine [0].transform = Matrix4x4.TRS (Vector3.zero, zeroRotation, Vector3.one);
-			finalCombine [1].mesh = this.mesh;
-			finalCombine [1].transform = Matrix4x4.TRS (Vector3.zero, zeroRotation, Vector3.one);
-
-			returnMesh.CombineMeshes (finalCombine, true, true);
-			return returnMesh;
-
-		} else {
-			CombineInstance[] combine = new CombineInstance[this.leafs.Count];
-			for (int i = 0; i < leafs.Count; i++) {
-				Leaf leaf = leafs [i];
-				combine [i].mesh = leaf.mesh;
-				Quaternion rotationQ = Quaternion.Euler (leaf.rotation.x, leaf.rotation.y, leaf.rotation.z);
-				combine [i].transform = Matrix4x4.TRS (leaf.translation, rotationQ, Vector3.one);
-			}
-			transferMesh.CombineMeshes (combine, true, true);
-			CombineInstance[] finalCombine = new CombineInstance[2];
-			Quaternion zeroRotation = Quaternion.Euler (0, 0, 0);
-			finalCombine [0].mesh = transferMesh;
-			finalCombine [0].transform = Matrix4x4.TRS (Vector3.zero, zeroRotation, Vector3.one);
-			finalCombine [1].mesh = this.mesh;
-			finalCombine [1].transform = Matrix4x4.TRS (Vector3.zero, zeroRotation, Vector3.one);
-
-			returnMesh.CombineMeshes (finalCombine, true, true);
-			return returnMesh;
-		}
-	}*/
 	public void growChildren ()
 	{
 		branchAge++;
