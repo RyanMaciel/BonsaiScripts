@@ -6,7 +6,7 @@ public class Fern : MonoBehaviour {
 	public Material material;
 	public Material fernBranchMaterial;
 	// Use this for initialization
-	void Start () {
+	/*void Start () {
 		MeshFilter filter = (MeshFilter)this.GetComponent<MeshFilter> ();
 		if (filter == null)filter = gameObject.AddComponent<MeshFilter> ();
 		filter.mesh = CylinderGenerator.generateCylinder (1f, 0.004f, 0.003f, 5);
@@ -28,12 +28,13 @@ public class Fern : MonoBehaviour {
 			//Correct for rotation anchor point.
 			float angle = Mathf.Deg2Rad * (newLeaf.transform.localRotation.eulerAngles.z);
 			float hypo = .1f;
-			newLeaf.transform.localPosition += new Vector3(Mathf.Sin(angle) * hypo, Mathf.Cos(angle) * hypo);*/
+			newLeaf.transform.localPosition += new Vector3(Mathf.Sin(angle) * hypo, Mathf.Cos(angle) * hypo);
 
 		}
 
 
 	}
+*/
 	
 	// Update is called once per frame
 	void Update () {
